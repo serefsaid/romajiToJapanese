@@ -1,2 +1,2 @@
 # romajiToJapanese
-This code converts your words to japanese kana alphabets when you're typing.
+This code is a google extension which converts your letters to japanese kana characters when you're typing.
