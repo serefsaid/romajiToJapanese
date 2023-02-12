@@ -1,7 +1,7 @@
 {
 "manifest_version": 3,
 "name": "Romaji To Japanese",
-"description": "Type kana alphabets without japanese keyboard",
+"description": "Type kana alphabets without japanese keyboard. Press Alt Graph to change between hiragana and katakana.",
 "version": "1.0",
 "icons": {
     "48": "images/romajiToJapanese.png"
