@@ -15,7 +15,13 @@ let alt = 'hiragana';//default alphabet is hiragana
 
 document.addEventListener('keyup',function(e){//to change alphabet on press Altgraph
     if(e.key=='AltGraph'){
-        if(alt=='hiragana'){alt='katakana';}else if(alt=='katakana'){alt='hiragana';}
+        if(alt=='hiragana'){
+            alt='katakana';
+        }else if(alt=='katakana'){
+            alt='latin';
+        }else if(alt=='latin'){
+            alt='hiragana';
+        }
         defineOnKeyUps();
     }
 })
@@ -27,6 +33,8 @@ function defineOnKeyUps(){
             object.onkeyup = function(){tryToChangeHiragana(object)};
         }else if(alt=='katakana'){
             object.onkeyup = function(){tryToChangeKatakana(object)};
+        }else if(alt=='latin'){
+            
         }
     })
 }
