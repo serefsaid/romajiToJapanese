@@ -39,7 +39,7 @@ function defineOnKeyUps(){
         }else if(alt=='katakana'){
             object.onkeyup = function(){tryToChangeKatakana(object)};
         }else if(alt=='latin'){
-            object.onkeyup = function(){saveLatin(object)};    
+            //object.onkeyup = function(){saveLatin(object)};    
         }
     })
 }
