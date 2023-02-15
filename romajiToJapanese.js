@@ -16,11 +16,11 @@ let alt = alphabets[0];//default alphabet
 
 document.addEventListener('keyup',function(e){//to change alphabet on press Altgraph
     if(e.key=='AltGraph'){
-        /*
-        var index = alphabets.findIndex(alt);
+        const currentAlphabet = (alph)=>alph==alt;
+        var index = alphabets.findIndex(currentAlphabet);
         alt = alphabets[index+1];
-        */
-        
+
+        /*
         if(alt=='hiragana'){
             alt='katakana';
         }else if(alt=='katakana'){
@@ -28,6 +28,7 @@ document.addEventListener('keyup',function(e){//to change alphabet on press Altg
         }else if(alt=='latin'){
             alt='hiragana';
         }
+        */
         
         defineOnKeyUps();
     }
