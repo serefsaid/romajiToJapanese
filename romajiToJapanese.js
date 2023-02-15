@@ -11,10 +11,14 @@ function findInputs(){
 }
 findInputs();///to found all inputs in the page and add them in inputObjects array (textaea and input tags)
 
-let alt = 'hiragana';//default alphabet is hiragana
+const alphabets = ['latin','hiragana','katakana'];
+let alt = alphabets[0];//default alphabet
 
 document.addEventListener('keyup',function(e){//to change alphabet on press Altgraph
     if(e.key=='AltGraph'){
+        var index = alphabets.findIndex(alt);
+        alt = alphabets[index+1];
+        /*
         if(alt=='hiragana'){
             alt='katakana';
         }else if(alt=='katakana'){
@@ -22,10 +26,10 @@ document.addEventListener('keyup',function(e){//to change alphabet on press Altg
         }else if(alt=='latin'){
             alt='hiragana';
         }
+        */
         defineOnKeyUps();
     }
 })
-let latinPart;//this is the part before i close latin part (this can also name as oldPart)
 
 function defineOnKeyUps(){
     inputObjects.forEach(object =>{//to define function for every input(input and textarea)
@@ -41,18 +45,12 @@ function defineOnKeyUps(){
 }
 defineOnKeyUps();
 
-function saveLatin(input){
-    latinPart = input.value;
-}
-
 function tryToChangeHiragana(input){
     let text = input.value;
     text = text.toLowerCase();
     var hiragana = hiraganaJson.find(object=>text.includes(object.roumaji));
     if(hiragana!=undefined){
-        if(latinPart!=undefined){text = text.replace(latinPart,'');}//replaced latin part from the text
         text = text.replace(hiragana.roumaji,hiragana.kana);
-        if(latinPart!=undefined){text = latinPart + text;}//deplaced    "        "    "    "    "   "
         input.value = text;
     }
 }
