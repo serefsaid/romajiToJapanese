@@ -19,7 +19,9 @@ document.addEventListener('keyup',function(e){//to change alphabet on press Altg
         const currentAlphabet = (alph)=>alph==alt;
         var index = alphabets.findIndex(currentAlphabet);
         alt = alphabets[index+1];
-
+        if(alt==3){
+            alt=0;
+        }
         /*
         if(alt=='hiragana'){
             alt='katakana';
